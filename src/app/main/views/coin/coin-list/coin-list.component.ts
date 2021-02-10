@@ -16,10 +16,7 @@ import {PopUpData} from '@root-store/router-store/pop-up-base.component';
 })
 export class CoinListComponent implements OnInit {
 
-
   collection$: Observable<Coin[]>;
-  cols: any;
-  itemsSelected$: Observable<Coin[]>;
 
   constructor(private store$: Store<RootStoreState.State>,
               private confirmationService: ConfirmationService) {
@@ -28,25 +25,10 @@ export class CoinListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('CoinListComponent.ngOnInit()');
-
-    this.itemsSelected$ = this.store$.pipe(
-      select(CoinStoreSelectors.selectItemsSelected)
-    );
-
-    this.collection$ = this.store$.select(
-      CoinStoreSelectors.selectAll
-    ).pipe(
-      tap(values => {
-        if (values && values.length > 0) {
-          this.cols = Object.keys(values[0]);
-        }
-      })
-    );
-
+    this.collection$ = this.store$.select(CoinStoreSelectors.selectAll);
     this.store$.dispatch(
       CoinStoreActions.SearchRequest({queryParams: {}})
     );
-
   }
 
   onEdit(item): void {
