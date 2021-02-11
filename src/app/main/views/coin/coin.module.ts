@@ -18,6 +18,7 @@ import {ButtonCreateManyTestCoinComponent} from './components/button-create-many
 import {NgLetModule} from '@core/directive/ng-let.directive';
 import {ToolbarModule} from 'primeng/toolbar';
 import {FormErrorMsgModule} from '../../../core/components/form-error-msg/form-error-msg.module';
+import {CounterModule} from "../counter/counter.module";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {FormErrorMsgModule} from '../../../core/components/form-error-msg/form-e
     SearchModule,
     NgLetModule,
     ToolbarModule,
-    FormErrorMsgModule
+    FormErrorMsgModule,
+    CounterModule
   ],
   providers: [],
   entryComponents: []

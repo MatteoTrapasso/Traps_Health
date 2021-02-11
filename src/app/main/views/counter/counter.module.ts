@@ -8,19 +8,24 @@ import {CounterListComponent} from './counter-list/counter-list.component';
 import {CounterRoutingModule} from './counter-routing.module';
 
 @NgModule({
-  declarations: [
-    CounterEditComponent,
-    CounterMainComponent,
+    declarations: [
+        CounterEditComponent,
+        CounterMainComponent,
+        CounterListComponent,
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CounterRoutingModule
+    ],
+    providers: [],
+  exports: [
     CounterListComponent,
+    CounterEditComponent,
+    CounterMainComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CounterRoutingModule
-  ],
-  providers: [],
-  entryComponents: []
+    entryComponents: []
 })
 export class CounterModule {
 }

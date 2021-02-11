@@ -27,5 +27,54 @@ export const initialState: State = {
         }
       }));
     }
-  }]
+  },
+    {
+      label: 'Person',
+      icon: 'pi pi-fw pi-user-plus',
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['person']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Person'] // breadcrumb
+          }
+        }));
+      }
+    },
+    {
+      label: 'Car',
+      icon: 'pi pi-fw pi-user-plus',
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['car']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Car'] // breadcrumb
+          }
+        }));
+      }
+    },
+    {
+      label: 'Structure',
+      icon: 'pi pi-fw pi-user-plus',
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['structure']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Structure'] // breadcrumb
+          }
+        }));
+      }
+    }
+  ]
 };

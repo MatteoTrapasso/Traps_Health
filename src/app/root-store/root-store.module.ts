@@ -10,6 +10,9 @@ import {SlideMenuStoreModule} from '@root-store/slide-menu-store';
 import { CoinStoreModule } from '@root-store/coin-store';
 import { AuthStoreModule } from '@root-store/auth-store';
 import { CounterStoreModule } from '@root-store/counter-store';
+import { PersonStoreModule } from '@root-store/person-store';
+import { CarStoreModule } from '@root-store/car-store';
+import { StructureStoreModule } from '@root-store/structure-store';
 
 @NgModule({
   imports: [
@@ -28,6 +31,9 @@ import { CounterStoreModule } from '@root-store/counter-store';
     CoinStoreModule,
     AuthStoreModule,
     CounterStoreModule,
+    PersonStoreModule,
+    CarStoreModule,
+    StructureStoreModule,
   ],
   declarations: []
 })
