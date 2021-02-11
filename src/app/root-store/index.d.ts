@@ -9,3 +9,4 @@ export * from './slide-menu-store';
 
 export * from './coin-store';
 export * from './auth-store';
+export * from './counter-store';

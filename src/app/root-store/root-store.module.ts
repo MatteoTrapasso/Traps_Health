@@ -9,6 +9,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {SlideMenuStoreModule} from '@root-store/slide-menu-store';
 import { CoinStoreModule } from '@root-store/coin-store';
 import { AuthStoreModule } from '@root-store/auth-store';
+import { CounterStoreModule } from '@root-store/counter-store';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { AuthStoreModule } from '@root-store/auth-store';
     }),
     CoinStoreModule,
     AuthStoreModule,
+    CounterStoreModule,
   ],
   declarations: []
 })
