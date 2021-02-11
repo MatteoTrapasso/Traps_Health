@@ -17,7 +17,7 @@ import {ButtonEditManyTestCoinComponent} from './components/button-edit-many-tes
 import {ButtonCreateManyTestCoinComponent} from './components/button-create-many-test-coin.component';
 import {NgLetModule} from '@core/directive/ng-let.directive';
 import {ToolbarModule} from 'primeng/toolbar';
-import {FormErrorMsgComponent} from "../../../core/components/form-error-msg/form-error-msg.component";
+import {FormErrorMsgModule} from '../../../core/components/form-error-msg/form-error-msg.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import {FormErrorMsgComponent} from "../../../core/components/form-error-msg/for
     ButtonDeleteCoinComponent,
     ButtonEditManyTestCoinComponent,
     ButtonCreateManyTestCoinComponent,
-    FormErrorMsgComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +41,8 @@ import {FormErrorMsgComponent} from "../../../core/components/form-error-msg/for
     PipesModule,
     SearchModule,
     NgLetModule,
-    ToolbarModule
+    ToolbarModule,
+    FormErrorMsgModule
   ],
   providers: [],
   entryComponents: []
