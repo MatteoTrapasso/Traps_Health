@@ -2,9 +2,8 @@
   "coin": [
     {
       "id": 1,
-      "value": "10",
       "name": "xxxx",
-      "description": "xxxx"
+      "value": "10"
     },
     {
       "id": 2,
