@@ -10,4 +10,18 @@ export const featureReducer = createReducer(initialState,
       return {quantity};
     },
   ),
+  on(actions.Decrement, (state) => {
+      console.log('actions.Decrement');
+      const quantity = state.quantity - 1;
+      console.log('quantity', quantity);
+      return {quantity};
+    },
+  ),
+  on(actions.Reset, (state) => {
+      console.log('actions.Reset');
+      const quantity = 0;
+      console.log('quantity', quantity);
+      return {quantity};
+    },
+  ),
 );
