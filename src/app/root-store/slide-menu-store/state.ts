@@ -13,6 +13,24 @@ export const initialState: State = {
   open: false,
   item: {breadcrumb: [], data: null},
   items: [{
+    label: 'Login',
+    icon: 'pi pi-fw pi-user-plus',
+    // @ts-ignore
+    roles: ['guest'],
+    command: (event$) => {
+      // invoco il router per cambiare pagina
+      event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['login']}));
+
+      // salvo nello store del menù l'elemento selezionato.
+      event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+        item: {
+          data: {},
+          breadcrumb: ['Sezione ', 'Login'] // breadcrumb
+        }
+      }));
+    }
+  },
+    {
     label: 'Coin',
     icon: 'pi pi-fw pi-user-plus',
     // @ts-ignore

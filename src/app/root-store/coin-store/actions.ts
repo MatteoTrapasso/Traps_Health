@@ -6,7 +6,11 @@ export const actions = adapter.createCrudActions(Names.NAME);
 export const {
   Response,
   ResetResponses,
-
+  /**
+   * azione utilizzata per eseguire delle ricerche asincrone
+   * parametri necessari:
+   *  ...
+   */
   SearchRequest,
   SearchFailure,
   SearchSuccess,
