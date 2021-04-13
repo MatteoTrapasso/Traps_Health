@@ -43,13 +43,13 @@ export const {
   EditManyFailure,
   EditManySuccess,
 
-  Reset,
-  Filters,
-  SelectItems,
-  SelectItem,
-  Edit,
-  Create,
-  Delete,
+  Reset, //reset store
+  Filters, //filtra i dati
+  SelectItems, //indica allo store gruppo elementi che si vuole selezionare
+  SelectItem, //indica un elemento ...
+  Edit, //modifica elemento senza chiamata
+  Create, //crea elemento
+  Delete, //elimina elemento
 } = actions;
 
 

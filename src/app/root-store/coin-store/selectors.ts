@@ -16,5 +16,8 @@ export const {
     selectIsLoading,
     selectIsLoaded,
     selectFilters,
-    selectFilteredItems
+    selectFilteredItems,
+    selectIdSelected,
+  selectIdsSelected,
+  selectResponses
 } = adapter.getCrudSelectors(selectState);
