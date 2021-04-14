@@ -1,63 +1,63 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {CoinStoreActions, CoinStoreSelectors, RootStoreState} from '@root-store/index';
+import {IbmStoreActions, IbmStoreSelectors, RootStoreState} from '@root-store/index';
 import {Observable} from 'rxjs';
-import {Coin} from '@models/vo/coin';
+import {Ibm} from '@models/vo/ibm';
 import {RouterStoreActions} from '@root-store/router-store/index';
 import {tap} from 'rxjs/operators';
 import {ConfirmationService} from 'primeng/api';
 import {PopUpData} from '@root-store/router-store/pop-up-base.component';
 
 @Component({
-  selector: 'app-coin-list',
-  templateUrl: `coin-list.component.html`,
+  selector: 'app-ibm-list',
+  templateUrl: `ibm-list.component.html`,
   styles: [``],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CoinListComponent implements OnInit {
+export class IbmListComponent implements OnInit {
 
-  collection$: Observable<Coin[]>;
+  collection$: Observable<Ibm[]>;
 
   constructor(private store$: Store<RootStoreState.State>,
               private confirmationService: ConfirmationService) {
-    console.log('CoinListComponent.constructor()');
+    console.log('IbmListComponent.constructor()');
   }
 
   ngOnInit(): void {
-    console.log('CoinListComponent.ngOnInit()');
-    this.collection$ = this.store$.select(CoinStoreSelectors.selectAll);
+    console.log('IbmListComponent.ngOnInit()');
+    this.collection$ = this.store$.select(IbmStoreSelectors.selectAll);
     this.store$.dispatch(
-      CoinStoreActions.SearchRequest({queryParams: {}})
+      IbmStoreActions.SearchRequest({queryParams: {}})
     );
   }
 
   onEdit(item): void {
-    console.log('CoinListComponent.onEdit()');
+    console.log('IbmListComponent.onEdit()');
 
-    const data: PopUpData<Coin> = {
+    const data: PopUpData<Ibm> = {
       item,
-      props: {title: 'Edit Coin', route: 'coin'}
+      props: {title: 'Edit Ibm', route: 'ibm'}
     };
 
     // apro la popUP
     this.store$.dispatch(RouterStoreActions.RouterGoPopUp({
-      path: ['coin', {outlets: {popUp: ['edit']}}],
+      path: ['ibm', {outlets: {popUp: ['edit']}}],
       data
     }));
 
   }
 
   onCopy(value): void {
-    console.log('CoinListComponent.onCopy()');
+    console.log('IbmListComponent.onCopy()');
 
     const item = {...{}, ...value, ...{id: null}};
-    const data: PopUpData<Coin> = {
+    const data: PopUpData<Ibm> = {
       item,
-      props: {title: 'Copy Coin', route: 'coin'}
+      props: {title: 'Copy Ibm', route: 'ibm'}
     };
 
     this.store$.dispatch(RouterStoreActions.RouterGoPopUp({
-      path: ['coin', {outlets: {popUp: ['edit']}}],
+      path: ['ibm', {outlets: {popUp: ['edit']}}],
       data
     }));
 
@@ -68,16 +68,16 @@ export class CoinListComponent implements OnInit {
     this.confirmationService.confirm({
       message: 'Are you sure that you want to perform this action?',
       accept: () => {
-        this.store$.dispatch(CoinStoreActions.DeleteRequest({item}));
+        this.store$.dispatch(IbmStoreActions.DeleteRequest({item}));
       }
     });
 
   }
 
-  onSelectionChange(items: Coin[]): void {
-    console.log('CoinListComponent.onSelectionChange()');
+  onSelectionChange(items: Ibm[]): void {
+    console.log('IbmListComponent.onSelectionChange()');
     console.log('items', items);
-    this.store$.dispatch(CoinStoreActions.SelectItems({items}));
+    this.store$.dispatch(IbmStoreActions.SelectItems({items}));
   }
 
 }

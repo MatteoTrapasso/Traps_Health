@@ -1,0 +1,13 @@
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <app-search [actions]="actions"></app-search>
+  </ng-template>
+  <ng-template pTemplate="right">
+    <app-button-new-ibm class="p-mr-2"></app-button-new-ibm>
+    <app-button-delete-ibm class="p-mr-2"></app-button-delete-ibm>
+    <app-button-edit-many-test-ibm class="p-mr-2"></app-button-edit-many-test-ibm>
+    <app-button-create-many-test-ibm></app-button-create-many-test-ibm>
+  </ng-template>
+</p-toolbar>
+<app-ibm-list></app-ibm-list>
+<app-counter-main></app-counter-main>

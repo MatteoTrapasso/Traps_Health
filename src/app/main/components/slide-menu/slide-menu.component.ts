@@ -8,7 +8,7 @@ import {menuItemsDecorator} from '@root-store/slide-menu-store/operators';
 @Component({
   selector: 'app-slide-menu',
   template: `
-    <div class="slide-header"><i class="fas fa-heart"></i> Menù</div>
+    <div class="slide-header"><i class="fas fa-universal-access"></i> Menù</div>
     <!--    <p-panelMenu [model]="items" [style.width.%]="100"></p-panelMenu>-->
     <p-scrollPanel #scrollPanel [style]="{height: '100%'}">
       <p-menu [model]="items$ | async" styleClass="slide-menu" [style.width.%]="100"></p-menu>
@@ -20,7 +20,7 @@ import {menuItemsDecorator} from '@root-store/slide-menu-store/operators';
       top: 0;
       left: 0;
       right: 0;
-      background-color: #0067b7;
+      background-color: #24292e;
       color: #FFF;
       font-size: x-large;
       padding: 18px;

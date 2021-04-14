@@ -34,16 +34,16 @@ export class AuthMockService {
   }
 }
 
-const cipo: Auth = {
+const traps: Auth = {
   token: 'xxx.xxx.xxx',
   roles: ['roleA'],
   user: {
-    user: 'cipo',
-    email: 'cipollino@mail.com',
-    password: 'cipo',
-    firstname: 'Cipo',
-    lastname: 'Lino',
-    age: 32,
+    user: 'traps',
+    email: 'traps@mail.com',
+    password: 'traps',
+    firstname: 'Traps',
+    lastname: 'Mat',
+    age: 23,
     id: 1
   }
 };
@@ -90,6 +90,6 @@ const poli: Auth = {
 };
 
 const authMocks: { [key: string]: Auth } = {
-  cipo, cino, pino, poli
+  traps, cino, pino, poli
 };
 

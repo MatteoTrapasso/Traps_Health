@@ -7,7 +7,7 @@ export {RootStoreState, RootStoreSelectors, RootStoreModule};
 export * from './router-store';
 export * from './slide-menu-store';
 
-export * from './coin-store';
+export * from './ibm-store';
 export * from './auth-store';
 export * from './counter-store';
 export * from './person-store';

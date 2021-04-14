@@ -7,7 +7,7 @@ import {RouterStoreModule} from './router-store';
 import {environment} from '../../environments/environment';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {SlideMenuStoreModule} from '@root-store/slide-menu-store';
-import { CoinStoreModule } from '@root-store/coin-store';
+import { IbmStoreModule } from '@root-store/ibm-store';
 import { AuthStoreModule } from '@root-store/auth-store';
 import { CounterStoreModule } from '@root-store/counter-store';
 import { PersonStoreModule } from '@root-store/person-store';
@@ -28,7 +28,7 @@ import { StructureStoreModule } from '@root-store/structure-store';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    CoinStoreModule,
+    IbmStoreModule,
     AuthStoreModule,
     CounterStoreModule,
     PersonStoreModule,

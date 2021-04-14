@@ -1,40 +1,40 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CoinEditComponent} from './coin-edit/coin-edit.component';
-import {CoinMainComponent} from './coin-main/coin-main.component';
-import {CoinListComponent} from './coin-list/coin-list.component';
-import {CoinRoutingModule} from './coin-routing.module';
-import {ButtonNewCoinComponent} from './components/button-new-coin.component';
+import {IbmEditComponent} from './ibm-edit/ibm-edit.component';
+import {IbmMainComponent} from './ibm-main/ibm-main.component';
+import {IbmListComponent} from './ibm-list/ibm-list.component';
+import {IbmRoutingModule} from './ibm-routing.module';
+import {ButtonNewIbmComponent} from './components/button-new-ibm.component';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {SearchModule} from '@components/search/search.module';
 import {PipesModule} from '@core/pipe/pipes.module';
-import {ButtonDeleteCoinComponent} from './components/button-delete-coin.component';
-import {ButtonEditManyTestCoinComponent} from './components/button-edit-many-test-coin.component';
-import {ButtonCreateManyTestCoinComponent} from './components/button-create-many-test-coin.component';
+import {ButtonDeleteIbmComponent} from './components/button-delete-ibm.component';
+import {ButtonEditManyTestIbmComponent} from './components/button-edit-many-test-ibm.component';
+import {ButtonCreateManyTestIbmComponent} from './components/button-create-many-test-ibm.component';
 import {NgLetModule} from '@core/directive/ng-let.directive';
 import {ToolbarModule} from 'primeng/toolbar';
 import {FormErrorMsgModule} from '../../../core/components/form-error-msg/form-error-msg.module';
-import {CounterModule} from "../counter/counter.module";
+import {CounterModule} from '../counter/counter.module';
 
 @NgModule({
   declarations: [
-    CoinEditComponent,
-    CoinMainComponent,
-    CoinListComponent,
-    ButtonNewCoinComponent,
-    ButtonDeleteCoinComponent,
-    ButtonEditManyTestCoinComponent,
-    ButtonCreateManyTestCoinComponent,
+    IbmEditComponent,
+    IbmMainComponent,
+    IbmListComponent,
+    ButtonNewIbmComponent,
+    ButtonDeleteIbmComponent,
+    ButtonEditManyTestIbmComponent,
+    ButtonCreateManyTestIbmComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CoinRoutingModule,
+    IbmRoutingModule,
     TableModule,
     DialogModule,
     ButtonModule,
@@ -49,5 +49,5 @@ import {CounterModule} from "../counter/counter.module";
   providers: [],
   entryComponents: []
 })
-export class CoinModule {
+export class IbmModule {
 }

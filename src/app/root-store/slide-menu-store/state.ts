@@ -31,19 +31,19 @@ export const initialState: State = {
     }
   },
     {
-    label: 'Coin',
+    label: 'Ibm',
     icon: 'pi pi-fw pi-user-plus',
     // @ts-ignore
     roles: ['roleA', 'guest'],
     command: (event$) => {
       // invoco il router per cambiare pagina
-      event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['coin']}));
+      event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['ibm']}));
 
       // salvo nello store del menù l'elemento selezionato.
       event$.item.store$.dispatch(SlideMenuStoreActions.Select({
         item: {
           data: {},
-          breadcrumb: ['Sezione ', 'Coin'] // breadcrumb
+          breadcrumb: ['Sezione ', 'Ibm'] // breadcrumb
         }
       }));
     }

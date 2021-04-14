@@ -3,8 +3,8 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Observable} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as actions from './actions';
-import {Coin} from '@models/vo/coin';
-import {CoinService} from '@services/coin.service';
+import {Ibm} from '@models/vo/ibm';
+import {IbmService} from '@services/ibm.service';
 import {
   createCall, createCatchError, createResponse,
   createManyCall, createManyCatchError, createManyResponse,
@@ -18,71 +18,71 @@ import {
 import {repeat} from 'rxjs/operators';
 
 @Injectable()
-export class CoinStoreEffects {
-    constructor(private readonly actions$: Actions, private readonly service: CoinService) {
+export class IbmStoreEffects {
+    constructor(private readonly actions$: Actions, private readonly service: IbmService) {
     }
 
   searchRequestEffect$: Observable<Action> = createEffect(() => this.actions$.pipe(
     ofType(actions.SearchRequest),
-    searchCall<Coin>(this.service),
-    searchResponse<Coin>(actions, {dispatchResponse: false}),
-    searchCatchError<Coin>(actions),
+    searchCall<Ibm>(this.service),
+    searchResponse<Ibm>(actions, {dispatchResponse: false}),
+    searchCatchError<Ibm>(actions),
     repeat()
   ));
 
   deleteRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.DeleteRequest),
-    deleteCall<Coin>(this.service),
-    deleteResponse<Coin>(actions, Coin, {dispatchResponse: false}),
-    deleteCatchError<Coin>(actions),
+    deleteCall<Ibm>(this.service),
+    deleteResponse<Ibm>(actions, Ibm, {dispatchResponse: false}),
+    deleteCatchError<Ibm>(actions),
     repeat()
   ));
 
   deleteManyRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.DeleteManyRequest),
-    deleteManyCall<Coin>(this.service),
-    deleteManyResponse<Coin>(actions, Coin, {dispatchResponse: false}),
-    deleteManyCatchError<Coin>(actions),
+    deleteManyCall<Ibm>(this.service),
+    deleteManyResponse<Ibm>(actions, Ibm, {dispatchResponse: false}),
+    deleteManyCatchError<Ibm>(actions),
     repeat()
   ));
 
   createRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.CreateRequest),
-    createCall<Coin>(this.service),
-    createResponse<Coin>(actions, {dispatchResponse: false}),
-    createCatchError<Coin>(actions),
+    createCall<Ibm>(this.service),
+    createResponse<Ibm>(actions, {dispatchResponse: false}),
+    createCatchError<Ibm>(actions),
     repeat()
   ));
 
   createManyRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.CreateManyRequest),
-    createManyCall<Coin>(this.service),
-    createManyResponse<Coin>(actions, {dispatchResponse: false}),
-    createManyCatchError<Coin>(actions),
+    createManyCall<Ibm>(this.service),
+    createManyResponse<Ibm>(actions, {dispatchResponse: false}),
+    createManyCatchError<Ibm>(actions),
     repeat()
   ));
 
   editRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.EditRequest),
-    editCall<Coin>(this.service),
-    editResponse<Coin>(actions, {dispatchResponse: false}),
-    editCatchError<Coin>(actions),
+    editCall<Ibm>(this.service),
+    editResponse<Ibm>(actions, {dispatchResponse: false}),
+    editCatchError<Ibm>(actions),
     repeat()
   ));
 
   editManyRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.EditManyRequest),
-    editManyCall<Coin>(this.service),
-    editManyResponse<Coin>(actions, {dispatchResponse: false}),
-    editManyCatchError<Coin>(actions),
+    editManyCall<Ibm>(this.service),
+    editManyResponse<Ibm>(actions, {dispatchResponse: false}),
+    editManyCatchError<Ibm>(actions),
     repeat()
   ));
 
   selectRequestEffect$: Observable<Action>  = createEffect(() => this.actions$.pipe(
     ofType(actions.SelectRequest),
-    selectCall<Coin>(this.service),
-    selectResponse<Coin>(actions, {dispatchResponse: false}),
-    selectCatchError<Coin>(actions),
+    selectCall<Ibm>(this.service),
+    selectResponse<Ibm>(actions, {dispatchResponse: false}),
+    selectCatchError<Ibm>(actions),
     repeat()
   ));
 

@@ -3,7 +3,7 @@ import {CarStoreState} from '@root-store/car-store';
 import {PersonStoreState} from '@root-store/person-store';
 import {Counter} from '@models/vo/counter';
 import {Auth} from '@models/vo/auth';
-import {CoinStoreState} from '@root-store/coin-store';
+import {IbmStoreState} from '@root-store/ibm-store';
 import {SlideMenuStoreState} from '@root-store/slide-menu-store';
 
 export interface State {
@@ -12,6 +12,6 @@ car:CarStoreState.State;
 person:PersonStoreState.State;
 counter:Counter;
 auth:Auth;
-coin:CoinStoreState.State;
+ibm:IbmStoreState.State;
   slide_menu: SlideMenuStoreState.State;
 }

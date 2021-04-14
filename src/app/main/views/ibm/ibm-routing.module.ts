@@ -1,17 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CoinMainComponent} from './coin-main/coin-main.component';
-import {CoinEditComponent} from '@views/coin/coin-edit/coin-edit.component';
+import {IbmMainComponent} from './ibm-main/ibm-main.component';
+import {IbmEditComponent} from '@views/ibm/ibm-edit/ibm-edit.component';
 
 const routes: Routes = [
   {
     path: 'main',
-    component: CoinMainComponent,
+    component: IbmMainComponent,
     pathMatch: 'full'
   },
   {
     path: 'edit',
-    component: CoinEditComponent,
+    component: IbmEditComponent,
     outlet: 'popUp',
     pathMatch: 'full'
   },
@@ -33,5 +33,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class CoinRoutingModule {
+export class IbmRoutingModule {
 }

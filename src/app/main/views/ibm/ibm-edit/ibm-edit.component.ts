@@ -1,17 +1,17 @@
 import {Component} from '@angular/core';
 import {closePopUpAction, PopUpBaseComponent} from '@root-store/router-store/pop-up-base.component';
-import {Coin} from '@models/vo/coin';
+import {Ibm} from '@models/vo/ibm';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CoinStoreActions} from '@root-store/coin-store';
+import {IbmStoreActions} from '@root-store/ibm-store';
 import {JValidators} from '../../../../core/utils/j-validators';
 
 
 @Component({
-  selector: 'app-coin-edit',
-  templateUrl: './coin-edit.component.html',
+  selector: 'app-ibm-edit',
+  templateUrl: './ibm-edit.component.html',
   styles: [``]
 })
-export class CoinEditComponent extends PopUpBaseComponent<Coin> {
+export class IbmEditComponent extends PopUpBaseComponent<Ibm> {
 
   form: FormGroup; // form
 
@@ -19,7 +19,7 @@ export class CoinEditComponent extends PopUpBaseComponent<Coin> {
   name: FormControl; // attributo
   value: FormControl; // attributo
 
-  setItemPerform(value: Coin): void {
+  setItemPerform(value: Ibm): void {
     this.makeFrom();
     this.form.reset(value);
   }
@@ -36,9 +36,9 @@ export class CoinEditComponent extends PopUpBaseComponent<Coin> {
     });
   }
 
-  acceptPerform(item: Coin): void {
+  acceptPerform(item: Ibm): void {
     if (item.id) {
-      this.store$.dispatch(CoinStoreActions.EditRequest({
+      this.store$.dispatch(IbmStoreActions.EditRequest({
         item, onResult: [
           // azione che verrà invocata al result della chiamata all'interno dell'effect.
           // chiude la popUP.
@@ -47,7 +47,7 @@ export class CoinEditComponent extends PopUpBaseComponent<Coin> {
         ]
       }));
     } else {
-      this.store$.dispatch(CoinStoreActions.CreateRequest({
+      this.store$.dispatch(IbmStoreActions.CreateRequest({
         item, onResult: [
           // azione che verrà invocata al result della chiamata all'interno dell'effect.
           // chiude la popUP.
