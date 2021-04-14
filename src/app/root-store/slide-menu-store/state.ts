@@ -34,7 +34,7 @@ export const initialState: State = {
     label: 'Ibm',
     icon: 'pi pi-fw pi-user-plus',
     // @ts-ignore
-    roles: ['roleA', 'guest'],
+    roles: ['roleA'], // add 'guest' per vedere senza login
     command: (event$) => {
       // invoco il router per cambiare pagina
       event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['ibm']}));
@@ -48,7 +48,7 @@ export const initialState: State = {
       }));
     }
   },
-    {
+   /* {
       label: 'Person',
       icon: 'pi pi-fw pi-user-plus',
       // @ts-ignore
@@ -101,6 +101,60 @@ export const initialState: State = {
           }
         }));
       }
-    }
+    },*/
+    {
+      label: 'MyBody',
+      icon: 'pi pi-fw pi-eye',
+      // @ts-ignore
+      roles: ['roleA'],
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['mybody']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Mybody'] // breadcrumb
+          }
+        }));
+      }
+    },
+    {
+      label: 'MyProgress',
+      icon: 'pi pi-fw pi-chart-line',
+      // @ts-ignore
+      roles: ['roleA'],
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['myprogress']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Myprogress'] // breadcrumb
+          }
+        }));
+      }
+    },
+    {
+      label: 'Target',
+      icon: 'pi pi-fw pi-tag',
+      // @ts-ignore
+      roles: ['roleA'],
+      command: (event$) => {
+        // invoco il router per cambiare pagina
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['target']}));
+
+        // salvo nello store del menù l'elemento selezionato.
+        event$.item.store$.dispatch(SlideMenuStoreActions.Select({
+          item: {
+            data: {},
+            breadcrumb: ['Sezione ', 'Target'] // breadcrumb
+          }
+        }));
+      }
+    },
   ]
 };

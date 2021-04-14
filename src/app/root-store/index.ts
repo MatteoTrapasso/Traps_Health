@@ -13,3 +13,5 @@ export * from './counter-store';
 export * from './person-store';
 export * from './car-store';
 export * from './structure-store';
+
+export * from './calculator-store';

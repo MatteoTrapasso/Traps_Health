@@ -13,6 +13,7 @@ import { CounterStoreModule } from '@root-store/counter-store';
 import { PersonStoreModule } from '@root-store/person-store';
 import { CarStoreModule } from '@root-store/car-store';
 import { StructureStoreModule } from '@root-store/structure-store';
+import { CalculatorStoreModule } from '@root-store/calculator-store';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { StructureStoreModule } from '@root-store/structure-store';
     PersonStoreModule,
     CarStoreModule,
     StructureStoreModule,
+    CalculatorStoreModule,
   ],
   declarations: []
 })

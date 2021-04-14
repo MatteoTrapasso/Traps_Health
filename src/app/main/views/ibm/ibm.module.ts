@@ -19,6 +19,7 @@ import {NgLetModule} from '@core/directive/ng-let.directive';
 import {ToolbarModule} from 'primeng/toolbar';
 import {FormErrorMsgModule} from '../../../core/components/form-error-msg/form-error-msg.module';
 import {CounterModule} from '../counter/counter.module';
+import {CalculatorModule} from '../calculator/calculator.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {CounterModule} from '../counter/counter.module';
     NgLetModule,
     ToolbarModule,
     FormErrorMsgModule,
-    CounterModule
+    CounterModule,
+    CalculatorModule
   ],
   providers: [],
   entryComponents: []
