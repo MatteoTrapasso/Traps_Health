@@ -1,0 +1,19 @@
+  <h2>controlla il tuo indice corporeo</h2>
+  <table>
+    <tr>
+      <td>Altezza (cm):</td>
+      <td><input type="text" id="height" placeholder="altezza"></td>
+    </tr>
+    <tr>
+      <td>Peso (kg):</td>
+      <td><input type="text" id="weight" placeholder="peso"></td>
+    </tr>
+    <tr>
+      <td> <span tooltip="Body Mass Index" flow="down">BMI:</span></td>
+      <td>{{BMI$ | async}}</td>
+    </tr>
+    <tr>
+      <td>la tua condizione è:</td>
+      <td>{{result$ | async}}</td>
+    </tr>
+  </table>
