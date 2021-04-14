@@ -10,21 +10,24 @@ import {FormErrorMsgModule} from '@core/components/form-error-msg/form-error-msg
 import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [
-    LoginMainComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    LoginRoutingModule,
-    CardModule,
-    ButtonModule,
-    FormErrorMsgModule,
-    InputTextModule
-  ],
-  providers: [],
-  entryComponents: []
+    declarations: [
+        LoginMainComponent,
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        LoginRoutingModule,
+        CardModule,
+        ButtonModule,
+        FormErrorMsgModule,
+        InputTextModule
+    ],
+    providers: [],
+    exports: [
+        LoginMainComponent
+    ],
+    entryComponents: []
 })
 export class LoginModule {
 }
