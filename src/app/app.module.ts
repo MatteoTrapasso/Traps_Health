@@ -14,7 +14,8 @@ import {ProgressModule} from '@components/progress/progress.module';
 import {NgLetModule} from '@core/directive/ng-let.directive';
 import {BreadcrumbModule} from '@components/breadcrumb/breadcrumb.module';
 import {ClickOutsideModule} from '@core/directive/click-outside-directive';
-import {CardModule} from 'primeng/card';
+import {CardModule} from "primeng/card";
+
 
 @NgModule({
   declarations: [

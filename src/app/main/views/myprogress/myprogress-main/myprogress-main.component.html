@@ -1,0 +1,12 @@
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <app-search [actions]="actions"></app-search>
+  </ng-template>
+  <ng-template pTemplate="right">
+    <app-button-new-myprogress class="p-mr-2"></app-button-new-myprogress>
+    <app-button-delete-myprogress class="p-mr-2"></app-button-delete-myprogress>
+    <app-button-edit-many-test-myprogress class="p-mr-2"></app-button-edit-many-test-myprogress>
+    <app-button-create-many-test-myprogress></app-button-create-many-test-myprogress>
+  </ng-template>
+</p-toolbar>
+<app-myprogress-list></app-myprogress-list>

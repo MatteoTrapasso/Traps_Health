@@ -20,7 +20,7 @@ export interface PreloaderGuardConfig<T> {
 
 /**
  *
- *  === per le pagine di dettaglio, l'istanza selezionata può essere passata direttamente completa di tutte le sue parti o precaricata con l'azione
+ *  === per le pagine di dettaglio, l'istanza selezionata può essere passata direttamente completa di tutte le sue parti o premyprogressicata con l'azione
  *  casi da gestire con le rotte, si ipotizza di partire da una lista di elementi che si vuole selezionare per vederne il dettaglio:
  *     - seleziono un oggetto già completo di tutte le sue parti:
  *         invoco la rotta passando l'istanza nei parametri extra, (senza valorizzare \:id della rotta).
@@ -30,12 +30,12 @@ export interface PreloaderGuardConfig<T> {
  *         invoco la rotta con \:id
  *         la classe Guard intercetta la rotta
  *             dispaccio l'azione per annullare l'itemSelezionato
- *             crea uno Observer su "selectItemSelected" (annullato in precedenza) e "selectRouteParam('id')", in modo da recuperare il valore dell'id passato e dell'item quando verrà precaricato
+ *             crea uno Observer su "selectItemSelected" (annullato in precedenza) e "selectRouteParam('id')", in modo da recuperare il valore dell'id passato e dell'item quando verrà premyprogressicato
  *             se id NON corrisponde all'id nell'item selezionato:
- *               dispaccio "actions.SelectRequest" per precaricare l'elemento
+ *               dispaccio "actions.SelectRequest" per premyprogressimyprogresse l'elemento
  *               interrompo la propagazione dell'evento cun il filter "selectId(item) === id"
  *             se id  corrisponde all'id nell'item selezionato:
- *               (vuol dire che l'item è stato precaricato)
+ *               (vuol dire che l'item è stato premyprogressicato)
  *
  */
 @Injectable({
@@ -87,10 +87,10 @@ export class PreloaderBaseGuard<T> implements CanActivate {
         RouterStoreSelectors.all,
         (id: string, item: T, ruoteData: RuoteData) => ({id, item, ruoteData})
       )),
-      // se non esiste l'id propago un errore, che permette alla rotta di proseguire senza precaricare dati
+      // se non esiste l'id propago un errore, che permette alla rotta di proseguire senza premyprogressimyprogresse dati
       tap(({id, item}) => {
         // se l'id dell'item attualmete selezionato NON corrisponde a quello passato nella rotta
-        // dispaccio l'azione per precaricare il dato.
+        // dispaccio l'azione per premyprogressimyprogresse il dato.
         if (evalData(() => config.selectId(item).toString() !== id.toString()), true) {
           const searchItem: T = config.plantId(id, {}) as T;
           this.store$.dispatch(config.actions.SelectRequest({item: searchItem}));
@@ -103,7 +103,7 @@ export class PreloaderBaseGuard<T> implements CanActivate {
       // entro nel metodo che si occupa del redirect.
       map(config.redirectPerform),
       map(action => this.store$.dispatch(action)),
-      // annnullo l'elemento precaricato
+      // annnullo l'elemento premyprogressicato
       tap(() => this.store$.dispatch(config.actions.SelectItem({item: null})))
     );
   }
@@ -111,7 +111,7 @@ export class PreloaderBaseGuard<T> implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.select(this.config).pipe(
       switchMap(() => of(false)),
-      // catturo l'errore propagato in caso di assenza dell'id, in questo caso proseguo senza precaricare dati.
+      // catturo l'errore propagato in caso di assenza dell'id, in questo caso proseguo senza premyprogressimyprogresse dati.
       catchError(() => of(false))
     );
   }

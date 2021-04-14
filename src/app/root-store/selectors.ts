@@ -1,6 +1,6 @@
 import {StructureStoreSelectors} from '@root-store/structure-store';
-import {CarStoreSelectors} from '@root-store/car-store';
-import {PersonStoreSelectors} from '@root-store/person-store';
+import {MyprogressStoreSelectors} from '@root-store/myprogress-store';
+import {MybodyStoreSelectors} from '@root-store/mybody-store';
 import {IbmStoreSelectors} from '@root-store/ibm-store';
 import {createSelectorFactory, defaultMemoize} from '@ngrx/store';
 
@@ -9,8 +9,8 @@ const customMemoizer = (aFn) => defaultMemoize(aFn, (a: any, b: any) => a === b)
 export const selectError =
   createSelectorFactory(customMemoizer)(
 StructureStoreSelectors.selectError,
-CarStoreSelectors.selectError,
-PersonStoreSelectors.selectError,
+MyprogressStoreSelectors.selectError,
+MybodyStoreSelectors.selectError,
 IbmStoreSelectors.selectError,
     (...args: string[]) => {
       console.log('selectError.args', args);
@@ -21,8 +21,8 @@ IbmStoreSelectors.selectError,
 export const selectIsLoading =
   createSelectorFactory(customMemoizer)(
 StructureStoreSelectors.selectIsLoading,
-CarStoreSelectors.selectIsLoading,
-PersonStoreSelectors.selectIsLoading,
+MyprogressStoreSelectors.selectIsLoading,
+MybodyStoreSelectors.selectIsLoading,
 IbmStoreSelectors.selectIsLoading,
     (...args: boolean[]) => {
       console.log('selectIsLoading.args', args);
