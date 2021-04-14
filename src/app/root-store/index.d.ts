@@ -10,6 +10,6 @@ export * from './slide-menu-store';
 export * from './ibm-store';
 export * from './auth-store';
 export * from './counter-store';
-export * from './person-store';
-export * from './car-store';
+export * from './mybody-store';
+export * from './myprogress-store';
 export * from './structure-store';

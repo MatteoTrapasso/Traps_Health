@@ -10,8 +10,8 @@ import {SlideMenuStoreModule} from '@root-store/slide-menu-store';
 import { IbmStoreModule } from '@root-store/ibm-store';
 import { AuthStoreModule } from '@root-store/auth-store';
 import { CounterStoreModule } from '@root-store/counter-store';
-import { PersonStoreModule } from '@root-store/person-store';
-import { CarStoreModule } from '@root-store/car-store';
+import { MybodyStoreModule } from '@root-store/mybody-store';
+import { MyprogressStoreModule } from '@root-store/myprogress-store';
 import { StructureStoreModule } from '@root-store/structure-store';
 
 @NgModule({
@@ -31,8 +31,8 @@ import { StructureStoreModule } from '@root-store/structure-store';
     IbmStoreModule,
     AuthStoreModule,
     CounterStoreModule,
-    PersonStoreModule,
-    CarStoreModule,
+    MybodyStoreModule,
+    MyprogressStoreModule,
     StructureStoreModule,
   ],
   declarations: []

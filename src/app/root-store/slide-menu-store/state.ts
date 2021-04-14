@@ -49,37 +49,37 @@ export const initialState: State = {
     }
   },
     {
-      label: 'Person',
+      label: 'Mybody',
       icon: 'pi pi-fw pi-user-plus',
       // @ts-ignore
       roles: ['roleA'],
       command: (event$) => {
         // invoco il router per cambiare pagina
-        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['person']}));
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['mybody']}));
 
         // salvo nello store del menù l'elemento selezionato.
         event$.item.store$.dispatch(SlideMenuStoreActions.Select({
           item: {
             data: {},
-            breadcrumb: ['Sezione ', 'Person'] // breadcrumb
+            breadcrumb: ['Sezione ', 'Mybody'] // breadcrumb
           }
         }));
       }
     },
     {
-      label: 'Car',
+      label: 'Myprogress',
       icon: 'pi pi-fw pi-user-plus',
       // @ts-ignore
       roles: ['roleA'],
       command: (event$) => {
         // invoco il router per cambiare pagina
-        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['car']}));
+        event$.item.store$.dispatch(RouterStoreActions.RouterGo({path: ['myprogress']}));
 
         // salvo nello store del menù l'elemento selezionato.
         event$.item.store$.dispatch(SlideMenuStoreActions.Select({
           item: {
             data: {},
-            breadcrumb: ['Sezione ', 'Car'] // breadcrumb
+            breadcrumb: ['Sezione ', 'Myprogress'] // breadcrumb
           }
         }));
       }
